@@ -1,0 +1,28 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.12-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'org.meiyappan'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'edu.stanford.nlp:stanford-corenlp:4.5.2'
+	implementation "edu.stanford.nlp:stanford-corenlp:4.5.2:models"
+	implementation "edu.stanford.nlp:stanford-corenlp:4.5.2:models-english"
+	implementation "edu.stanford.nlp:stanford-corenlp:4.5.2:models-english-kbp"
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
